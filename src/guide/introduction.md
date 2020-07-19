@@ -43,17 +43,12 @@ const HelloVueApp = {
   }
 }
 
-Vue.createApp(HelloVueApp).mount('#hello-vue')
+const HelloVueVm = Vue.createApp(HelloVueApp).mount('#hello-vue')
 ```
 
-We have already created our very first Vue app! This looks pretty similar to rendering a string template, but Vue has done a lot of work under the hood. The data and the DOM are now linked, and everything is now **reactive**. How do we know? Change the `message` property in the code snippet below to a different value and the rendered example will update accordingly:
+<IntroHelloVue />
 
-<p class="codepen" data-height="300" data-theme-id="39028" data-default-tab="js,result" data-user="Vue" data-slug-hash="KKpRVpx" data-editable="true" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Hello Vue">
-  <span>See the Pen <a href="https://codepen.io/team/Vue/pen/KKpRVpx">
-  Hello Vue</a> by Vue (<a href="https://codepen.io/Vue">@Vue</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+We have already created our very first Vue app! This looks pretty similar to rendering a string template, but Vue has done a lot of work under the hood. The data and the DOM are now linked, and everything is now **reactive**. How do we know? Open your browser’s JavaScript console (right now, on this page) and set `HelloVueVm.message` to a different value. You should see the rendered example above update accordingly.
 
 In addition to text interpolation, we can also bind element attributes like this:
 
@@ -106,19 +101,14 @@ const ConditionalRenderingApp = {
   }
 }
 
-Vue.createApp(ConditionalRenderingApp).mount('#conditional-rendering')
+const ConditionalRenderingVm = Vue.createApp(ConditionalRenderingApp).mount('#conditional-rendering')
 ```
 
+<IntroConditionalRendering />
+
+Go ahead and enter `ConditionalRenderingVm.seen = false` in the console. You should see the message disappear.
+
 This example demonstrates that we can bind data to not only text and attributes, but also the **structure** of the DOM. Moreover, Vue also provides a powerful transition effect system that can automatically apply [transition effects](TODO) when elements are inserted/updated/removed by Vue.
-
-You can change `seen` from `true` to `false` in the sandbox below to check the effect:
-
-<p class="codepen" data-height="300" data-theme-id="39028" data-default-tab="js,result" data-user="Vue" data-slug-hash="oNXdbpB" data-preview="true" data-editable="true" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Conditional rendering">
-  <span>See the Pen <a href="https://codepen.io/team/Vue/pen/oNXdbpB">
-  Conditional rendering</a> by Vue (<a href="https://codepen.io/Vue">@Vue</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 There are quite a few other directives, each with its own special functionality. For example, the `v-for` directive can be used to display a list of items using the data from an Array:
 
